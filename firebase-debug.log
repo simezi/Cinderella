@@ -1,0 +1,28 @@
+[debug] [2017-07-31T10:04:38.616Z] ----------------------------------------------------------------------
+[debug] [2017-07-31T10:04:38.619Z] Command:      /usr/local/bin/node /usr/local/bin/firebase serve
+[debug] [2017-07-31T10:04:38.619Z] CLI Version:  3.9.1
+[debug] [2017-07-31T10:04:38.619Z] Platform:     darwin
+[debug] [2017-07-31T10:04:38.619Z] Node Version: v8.2.1
+[debug] [2017-07-31T10:04:38.620Z] Time:         Mon Jul 31 2017 19:04:38 GMT+0900 (JST)
+[debug] [2017-07-31T10:04:38.620Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2017-07-31T10:04:38.643Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2017-07-31T10:04:38.644Z] > authorizing via signed-in user
+[debug] [2017-07-31T10:04:38.646Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/projects/cinderella-c117d  
+ Mon Jul 31 2017 19:04:38 GMT+0900 (JST)
+[debug] [2017-07-31T10:04:39.947Z] <<< HTTP RESPONSE 200
+[debug] [2017-07-31T10:04:39.948Z] >>> HTTP REQUEST GET https://admin.firebase.com/v1/database/cinderella-c117d/tokens  
+ Mon Jul 31 2017 19:04:39 GMT+0900 (JST)
+[debug] [2017-07-31T10:04:40.672Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/Users/matsubaray/Documents/Cinderella'...
+[info] 
+[debug] [2017-07-31T10:04:40.675Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/cinderella-c117d  
+ Mon Jul 31 2017 19:04:40 GMT+0900 (JST)
+[debug] [2017-07-31T10:04:41.441Z] <<< HTTP RESPONSE 200
+[debug] [2017-07-31T10:04:41.441Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/62453031102/clients/_:getWebAppConfig  
+ Mon Jul 31 2017 19:04:41 GMT+0900 (JST)
+[debug] [2017-07-31T10:04:42.133Z] <<< HTTP RESPONSE 200
+[info] i  hosting: Serving hosting files from: public/cinderella/dist
+[info] ✔  hosting: Local server: http://localhost:5000
+
