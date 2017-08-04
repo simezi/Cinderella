@@ -37,8 +37,8 @@ jobs:
       - run:
           name: install firebase
           command: |
-            npm install -g firebase-tools
-            
+            yarn global add firebase-tools
+
       - save_cache:
           paths:
             - node_modules
