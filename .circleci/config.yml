@@ -41,9 +41,10 @@ jobs:
 
       # webpack build
       - run:
-        name: webpack build
-        command: yarn run build
-        working_directory: ./public/cinderella
+          name: webpack build
+          command: |
+            yarn run build
+          working_directory: ./public/cinderella
 
       # deploy to firebase
       - run: firebase deploy --project "$FIREBASE_PJ" --token "$FIREBASE_TOKEN"
