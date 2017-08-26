@@ -1,7 +1,5 @@
-<template>
-  <div>
-    hogehogeodasa1243
-  </div>
+<template lang="pug">
+  div hogehogeodasa1243
 </template>
 <script>
 //  import firebase from 'firebase';
