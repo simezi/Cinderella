@@ -5,15 +5,17 @@
       span {{song.title}}
 </template>
 <script>
-  import getSongs from '@/api/song/index';
+  import { mapState } from 'vuex';
 
   export default {
-    data: () => ({
-      songs: [],
+    data: () => ({}),
+
+    computed: mapState({
+      songs: state => state.songs,
     }),
 
-    async mounted() {
-      this.$data.songs = await getSongs();
+    mounted() {
+      this.$store.dispatch('fetchSongs');
     },
   };
 

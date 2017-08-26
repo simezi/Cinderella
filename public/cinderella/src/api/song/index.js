@@ -9,6 +9,5 @@ export default async function getSongs() {
   songsObj.forEach((song) => {
     temp.push(song.val());
   });
-  console.log(temp);
   return temp;
 }
