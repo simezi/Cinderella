@@ -3,9 +3,10 @@
     v-data-table(:headers = "headers",
     :items = "songs",
     :search="search",
-    :pagination.sync="pagination").elevation-1
+    :pagination.sync="pagination")
       template(slot="items" scope="props")
         td {{props.item.title}}
+        td {{props.item.type}}
         td {{props.item.bpm}}
 
 </template>
@@ -16,6 +17,7 @@
     data: () => ({
       headers: [
         { text: 'title', align: 'left', value: 'title' },
+        { text: 'type', align: 'left', value: 'type' },
         { text: 'bpm', align: 'left', value: 'bpm' },
       ],
       search: '',
