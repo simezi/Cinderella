@@ -1,5 +1,9 @@
 <template lang="pug">
   div
+    v-text-field(
+      v-model="search",
+      append-icon="search",
+      single-line hide-details label="曲名")
     v-data-table(:headers = "headers",
     :items = "songs",
     :search="search",
@@ -24,7 +28,7 @@
       pagination: {
         descending: false,
         page: 1,
-        rowsPerPage: 20,
+        rowsPerPage: 30,
         sortBy: '',
         totalItems: 0,
       },
@@ -34,6 +38,27 @@
       ...mapState({
         songs: state => state.songs,
       }),
+    },
+
+    methods: {
+      difficulty(song, rank) {
+        switch (rank) {
+          case 'debut':
+            return song.difficulties[0];
+          case 'regular':
+            return song.difficulties[1];
+          case 'pro':
+            return song.difficulties[2];
+          case 'master':
+            return song.difficulties[3];
+          case 'masterPlusLegacy':
+            return song.difficulties.length === 6 ? song.difficulties[4] : null;
+          case 'masterPlus':
+            return song.difficulties.length === 6 ? song.difficulties[5] : song.difficulties[4];
+          default:
+            return null;
+        }
+      },
     },
 
     mounted() {
