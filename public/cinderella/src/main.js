@@ -9,7 +9,6 @@ import store from './store/index';
 
 import('vuetify/dist/vuetify.min.css');
 
-
 const config = {
   apiKey: 'AIzaSyByLHuxZDx-S2XRSMNLBki_IlhiAWdzetw',
   authDomain: 'cinderella-c117d.firebaseapp.com',

@@ -1,5 +1,5 @@
 <template lang="pug">
-  div hogehogeodasa1243
+  div デレステ開発実験ページ
 </template>
 <script>
 //  import firebase from 'firebase';

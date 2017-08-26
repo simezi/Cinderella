@@ -24,6 +24,7 @@
     name: 'app',
     data: () => ({
       items: [
+        { text: 'top' },
         { text: 'song' },
         { text: 'idol' },
       ],
