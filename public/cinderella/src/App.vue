@@ -3,7 +3,7 @@
     <v-toolbar dark>
       <v-toolbar-title>cinderella</v-toolbar-title>
       <v-spacer></v-spacer>
-      <v-toolbar-items class="hidden-sm-and-down" v-for="item in items" :key="item.text">
+      <v-toolbar-items v-for="item in items" :key="item.text">
         <v-btn :to="item.text" flat>{{ item.text }}</v-btn>
       </v-toolbar-items>
     </v-toolbar>
