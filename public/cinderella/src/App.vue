@@ -1,5 +1,5 @@
 <template>
-  <v-app dark>
+  <v-app light>
     <v-toolbar dark>
       <v-toolbar-title>cinderella</v-toolbar-title>
       <v-spacer></v-spacer>
@@ -29,8 +29,7 @@
         { text: 'idol' },
       ],
     }),
-  }
-  ;
+  };
 </script>
 
 <style module lang="postcss">
