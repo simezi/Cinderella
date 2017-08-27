@@ -25,7 +25,7 @@
     data: () => ({
       items: [
         { text: 'top' },
-        { text: 'song' },
+        { text: 'songs' },
         { text: 'idol' },
       ],
     }),
