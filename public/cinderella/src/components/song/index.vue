@@ -3,9 +3,9 @@
     v-breadcrumbs(icons divider="forward")
       v-breadcrumbs-item
         router-link(to="/songs") 楽曲一覧
-      v-breadcrumbs-item {{$route.params.songName}}
+      v-breadcrumbs-item {{songName}}
     div(v-if="song")
-      span {{$route.params.songName}}
+      span {{songName}}
       v-data-table(:headers = "headers",
       :items = "song.difficulties",
       hide-actions,
@@ -40,9 +40,12 @@
     computed: {
       ...mapState({
         song(state) {
-          return state.songs.filter(song => song.title === this.$route.params.songName)[0];
+          return state.songs.filter(song => song.title === this.songName)[0];
         },
       }),
+      songName() {
+        return decodeURIComponent(this.$route.params.songName);
+      },
     },
     created() {
       this.$store.dispatch('fetchSongs');

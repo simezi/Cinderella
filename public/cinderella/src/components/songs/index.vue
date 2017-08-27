@@ -20,7 +20,7 @@
       template(slot="items" scope="props")
         tr(:class="typeColor(props.item.type)" v-if="difficulty(props.item, difficultySelected)")
           td
-            router-link(:to="'/songs/'+ props.item.title") {{props.item.title}}
+            router-link(:to="'/songs/'+ encodeURIComponent(props.item.title)") {{props.item.title}}
           td {{props.item.type}}
           td(align="right")  {{props.item.bpm}}
           td(align="right")  {{difficulty(props.item, difficultySelected).level}}
