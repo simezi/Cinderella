@@ -22,6 +22,8 @@
           td {{props.item.type}}
           td(align="right")  {{props.item.bpm}}
           td(align="right")  {{difficulty(props.item, difficultySelected).level}}
+          td(align="right")  {{difficulty(props.item, difficultySelected).density}}
+          td(align="right")  {{difficulty(props.item, difficultySelected).notes}}
 
 </template>
 <script>
@@ -34,6 +36,8 @@
         { text: 'type', align: 'left', value: 'type' },
         { text: 'bpm', align: 'right', value: 'bpm' },
         { text: 'level', align: 'right', value: 'level' },
+        { text: '密度', align: 'right', value: 'density' },
+        { text: 'note', align: 'right', value: 'notes' },
       ],
       search: '',
       pagination: {
@@ -97,6 +101,12 @@
           if (this.pagination.sortBy === 'level') {
             sortA = this.difficulty(a, this.difficultySelected).level;
             sortB = this.difficulty(b, this.difficultySelected).level;
+          } else if (this.pagination.sortBy === 'density') {
+            sortA = this.difficulty(a, this.difficultySelected).density;
+            sortB = this.difficulty(b, this.difficultySelected).density;
+          } else if (this.pagination.sortBy === 'notes') {
+            sortA = this.difficulty(a, this.difficultySelected).notes;
+            sortB = this.difficulty(b, this.difficultySelected).notes;
           }
           if (isDescending) {
             [sortA, sortB] = [sortB, sortA];
