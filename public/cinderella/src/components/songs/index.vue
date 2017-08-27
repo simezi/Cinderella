@@ -19,13 +19,13 @@
     :pagination.sync="pagination")
       template(slot="items" scope="props")
         tr(:class="typeColor(props.item.type)" v-if="difficulty(props.item, difficultySelected)")
-          td {{props.item.title}}
+          td
+            router-link(:to="'/songs/'+ props.item.title") {{props.item.title}}
           td {{props.item.type}}
           td(align="right")  {{props.item.bpm}}
           td(align="right")  {{difficulty(props.item, difficultySelected).level}}
           td(align="right")  {{difficulty(props.item, difficultySelected).density}}
           td(align="right")  {{difficulty(props.item, difficultySelected).notes}}
-
 </template>
 <script>
   import { mapState } from 'vuex';
@@ -44,7 +44,7 @@
       pagination: {
         descending: false,
         page: 1,
-        rowsPerPage: 100,
+        rowsPerPage: 30,
         sortBy: '',
         totalItems: 0,
       },
