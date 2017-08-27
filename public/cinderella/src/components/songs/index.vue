@@ -40,15 +40,6 @@
         { text: '密度', align: 'right', value: 'density' },
         { text: 'note', align: 'right', value: 'notes' },
       ],
-      search: '',
-      pagination: {
-        descending: false,
-        page: 1,
-        rowsPerPage: 30,
-        sortBy: '',
-        totalItems: 0,
-      },
-      difficultySelected: 'MASTER',
       items: ['DEBUT', 'REGULAR', 'PRO', 'MASTER', 'MASTER+LEGACY', 'MASTER+'],
     }),
 
@@ -58,6 +49,30 @@
           return state.songs.filter(song => this.difficulty(song, this.difficultySelected));
         },
       }),
+      pagination: {
+        get() {
+          return this.$store.state.songsPagination;
+        },
+        set(val) {
+          this.$store.commit('setSongsPagination', val);
+        },
+      },
+      search: {
+        get() {
+          return this.$store.state.songsSearchKey;
+        },
+        set(val) {
+          this.$store.commit('setSongsSearchKey', val);
+        },
+      },
+      difficultySelected: {
+        get() {
+          return this.$store.state.difficultySelected;
+        },
+        set(val) {
+          this.$store.commit('setSongsDifficulty', val);
+        },
+      },
     },
 
     methods: {
@@ -136,7 +151,7 @@
       },
     },
 
-    mounted() {
+    created() {
       this.$store.dispatch('fetchSongs');
     },
   };

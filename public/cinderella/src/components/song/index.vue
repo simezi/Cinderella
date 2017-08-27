@@ -3,7 +3,7 @@
     v-breadcrumbs(icons divider="forward")
       v-breadcrumbs-item
         router-link(to="/songs") 楽曲一覧
-      v-breadcrumbs-item {{song.title}}
+      v-breadcrumbs-item {{$route.params.songName}}
     div(v-if="song")
       span {{$route.params.songName}}
       v-data-table(:headers = "headers",
@@ -44,7 +44,7 @@
         },
       }),
     },
-    mounted() {
+    created() {
       this.$store.dispatch('fetchSongs');
     },
   };
