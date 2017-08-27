@@ -4,6 +4,7 @@
       span {{$route.params.songName}}
       v-data-table(:headers = "headers",
       :items = "song.difficulties",
+      hide-actions,
       :pagination.sync="pagination")
         template(slot="items" scope="props")
           tr
@@ -28,6 +29,7 @@
         ],
         pagination: {
           sortBy: 'level',
+          rowsPerPage: 6,
         },
       };
     },
