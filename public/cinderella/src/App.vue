@@ -1,21 +1,15 @@
-<template>
-  <v-app light>
-    <v-toolbar dark>
-      <v-toolbar-title>cinderella</v-toolbar-title>
-      <v-spacer></v-spacer>
-      <v-toolbar-items v-for="item in items" :key="item.text">
-        <v-btn :to="'/' + item.text" flat>{{ item.text }}</v-btn>
-      </v-toolbar-items>
-    </v-toolbar>
-    <main>
-      <v-container fluid>
-        <div id="app">
-          <router-view></router-view>
-        </div>
-      </v-container>
-    </main>
-    <v-footer></v-footer>
-  </v-app>
+<template lang="pug">
+  v-app(light)
+    v-toolbar(dark)
+      v-toolbar-title cinderella
+      v-spacer
+      v-toolbar-items(v-for="item in items" v-bind:key="item.text")
+        v-btn(:to="'/' + item.text" flat) {{ item.text }}
+    main
+    v-container(fluid)
+      div#app
+        router-view
+    v-footer
 </template>
 
 <script>
