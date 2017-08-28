@@ -2,6 +2,7 @@
 import Vuex from 'vuex';
 import Vue from 'vue';
 import getSongs from '@/api/song/index';
+import getIdols from '@/api/idol/index';
 
 Vue.use(Vuex);
 
@@ -17,6 +18,7 @@ const store = new Vuex.Store({
     },
     songsSearchKey: '',
     difficultySelected: 'MASTER',
+    idols: [],
   },
 
   mutations: {
@@ -36,12 +38,23 @@ const store = new Vuex.Store({
     setSongsDifficulty(state, difficulty) {
       state.difficultySelected = difficulty;
     },
+
+    setIdols(state, idols) {
+      // eslint-disable-next-line no-param-reassign
+      state.idols = idols;
+    },
   },
 
   actions: {
     async fetchSongs(context) {
       if (context.state.songs.length === 0) {
         context.commit('setSongs', await getSongs());
+      }
+    },
+
+    async fetchIdols(context) {
+      if (context.state.idols.length === 0) {
+        context.commit('setIdols', await getIdols());
       }
     },
   },
