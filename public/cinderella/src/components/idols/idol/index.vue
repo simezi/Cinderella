@@ -49,6 +49,14 @@
           v-list-tile-content
             v-list-tile-title.gray--text.caption 利き手
             v-list-tile-sub-title {{idol.hand}}
+        v-list-tile
+          v-list-tile-content
+            v-list-tile-title.gray--text.caption 趣味
+            v-list-tile-sub-title {{idol.favorite}}
+        v-list-tile
+          v-list-tile-content
+            v-list-tile-title.gray--text.caption 声優
+            v-list-tile-sub-title {{idol.cv}}
 
 
 </template>
