@@ -18,14 +18,14 @@
     :custom-sort="sort",
     :pagination.sync="pagination")
       template(slot="items" scope="props")
-        tr(:class="typeColor(props.item.type)" v-if="difficulty(props.item, difficultySelected)")
+        tr( :class="typeColor(props.item.type)" v-if="difficulty(props.item, difficultySelected)")
           td
-            router-link(:to="'/songs/'+ encodeURIComponent(props.item.title)") {{props.item.title}}
-          td {{props.item.type}}
-          td(align="right")  {{props.item.bpm}}
+            router-link(:to="'/songs/'+ encodeURIComponent(props.item.title)" ).caption.nowrap {{props.item.title}}
+          td.caption.nowrap {{props.item.type}}
           td(align="right")  {{difficulty(props.item, difficultySelected).level}}
           td(align="right")  {{difficulty(props.item, difficultySelected).density}}
           td(align="right")  {{difficulty(props.item, difficultySelected).notes}}
+          td(align="right")  {{props.item.bpm}}
 </template>
 <script>
   import { mapState } from 'vuex';
@@ -35,10 +35,10 @@
       headers: [
         { text: 'title', align: 'left', value: 'title' },
         { text: 'type', align: 'left', value: 'type' },
-        { text: 'bpm', align: 'right', value: 'bpm' },
         { text: 'level', align: 'right', value: 'level' },
         { text: '密度', align: 'right', value: 'density' },
         { text: 'note', align: 'right', value: 'notes' },
+        { text: 'bpm', align: 'right', value: 'bpm' },
       ],
       items: ['DEBUT', 'REGULAR', 'PRO', 'MASTER', 'MASTER+LEGACY', 'MASTER+'],
     }),

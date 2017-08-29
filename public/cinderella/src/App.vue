@@ -6,7 +6,7 @@
       v-toolbar-items(v-for="item in items" v-bind:key="item.text")
         v-btn(:to="'/' + item.text" flat) {{ item.text }}
     main
-    v-container(fluid)
+    v-container(fluid).pa-1
       div#app
         router-view
     v-footer
@@ -51,5 +51,9 @@
     direction: ltr;
     -webkit-font-feature-settings: 'liga';
     -webkit-font-smoothing: antialiased;
+  }
+
+  .nowrap {
+    white-space: nowrap;
   }
 </style>
