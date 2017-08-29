@@ -20,7 +20,7 @@
       items: [
         { text: 'top' },
         { text: 'songs' },
-        { text: 'idol' },
+        { text: 'idols' },
       ],
     }),
   };

@@ -1,7 +1,7 @@
 /* eslint-disable no-param-reassign */
 import Vuex from 'vuex';
 import Vue from 'vue';
-import getSongs from '@/api/song/index';
+import { getSongs } from '@/api/song/index';
 import getIdols from '@/api/idol/index';
 
 Vue.use(Vuex);

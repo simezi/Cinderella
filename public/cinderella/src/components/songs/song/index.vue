@@ -17,9 +17,14 @@
             td(align="right") {{props.item.notes}}
             td(align="right") {{props.item.density}}
             td(align="right") {{props.item.stamina}}
+      span 歌：
+      div(v-if="songIdols" v-for="(_, idol) of songIdols.idols")
+        router-link(:to="`/idols/${encodeURIComponent(idol)}`") {{idol}}
+
 </template>
 <script>
   import { mapState } from 'vuex';
+  import { getSongIdols } from '@/api/song/index';
 
   export default {
     data() {
@@ -35,6 +40,7 @@
           sortBy: 'level',
           rowsPerPage: 6,
         },
+        songIdols: null,
       };
     },
     computed: {
@@ -47,8 +53,14 @@
         return decodeURIComponent(this.$route.params.songName);
       },
     },
-    created() {
+    methods: {
+      async getSongIdols(song) {
+        return getSongIdols(song);
+      },
+    },
+    async created() {
       this.$store.dispatch('fetchSongs');
+      this.songIdols = await getSongIdols(this.songName);
     },
   };
 </script>

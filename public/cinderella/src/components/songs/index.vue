@@ -12,7 +12,7 @@
         v-model="difficultySelected"
         label="難易度"
         item-value="text")
-    v-data-table(:headers = "headers",
+    v-data-table(:headers = "headers", fluid
     :items = "songs",
     :search="search",
     :custom-sort="sort",

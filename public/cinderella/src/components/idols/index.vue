@@ -1,5 +1,5 @@
 <template lang="pug">
-  div idol
+  div
     v-layout
       v-flex(xs6)
         v-text-field(
@@ -7,12 +7,13 @@
         append-icon="search",
         single-line hide-details label="名前検索")
     v-data-table(:headers = "headers",
+    hide-actions
     :items = "idols",
     :search="search")
       template(slot="items" scope="props")
         tr(:class="typeColor(props.item.type)")
           td
-            router-link(:to="'/songs/'+ encodeURIComponent(props.item.name)") {{props.item.name}}
+            router-link(:to="'/idols/'+ encodeURIComponent(props.item.name)") {{props.item.name}}
           td {{props.item.type}}
 </template>
 <script>
