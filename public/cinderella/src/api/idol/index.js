@@ -3,7 +3,7 @@
  */
 import firebase from 'firebase';
 
-export default async function getIdols() {
+export async function getIdols() {
   const db = firebase.database();
   const idolRef = db.ref('/idols/');
   const idolsObj = await idolRef.once('value');
@@ -13,4 +13,11 @@ export default async function getIdols() {
     temp.push(idol.val());
   });
   return temp;
+}
+
+export async function getIdolSongs(idol) {
+  const db = firebase.database();
+  const songRef = db.ref('/idolSongs/').child(idol);
+  const obj = await songRef.once('value');
+  return obj.val();
 }

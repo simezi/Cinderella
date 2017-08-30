@@ -40,7 +40,7 @@
           sortBy: 'level',
           rowsPerPage: 6,
         },
-        songIdols: null,
+        songIdols: [],
       };
     },
     computed: {
