@@ -15,6 +15,8 @@
           td
             router-link(:to="'/idols/'+ encodeURIComponent(props.item.name)") {{props.item.name}}
           td {{props.item.type}}
+          td {{props.item.cv}}
+
 </template>
 <script>
   import { mapState } from 'vuex';
