@@ -6,7 +6,7 @@
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",
-    "start": "node build/dev-server.js",
+    "start": "webpack-dashboard -- node build/dev-server.js",
     "build": "node build/build.js",
     "lint": "eslint --ext .js,.vue src"
   },
@@ -16,7 +16,8 @@
     "vue": "^2.3.3",
     "vue-router": "^2.6.0",
     "vuetify": "^0.14.11",
-    "vuex": "^2.3.1"
+    "vuex": "^2.3.1",
+    "webpack-dashboard": "^1.0.0-5"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
