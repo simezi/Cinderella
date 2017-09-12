@@ -28,6 +28,7 @@
         headers: [
           { text: '氏名', align: 'left', value: 'name' },
           { text: 'type', align: 'left', value: 'type' },
+          { text: 'cv', align: 'left', value: 'cv' },
         ],
       };
     },
