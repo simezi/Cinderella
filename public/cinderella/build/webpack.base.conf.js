@@ -24,6 +24,7 @@ module.exports = {
     new WorkboxPlugin({
       globDirectory: config.build.assetsRoot,
       globPatterns: ['**/*.{html,js,css}'],
+      swSrc: './src/sw.js',
       swDest: path.join(config.build.assetsRoot, 'js/sw.js'),
     }),
   ],
