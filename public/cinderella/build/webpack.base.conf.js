@@ -2,6 +2,8 @@ const path = require('path');
 const utils = require('./utils');
 const config = require('../config');
 const vueLoaderConfig = require('./vue-loader.conf');
+const WorkboxPlugin = require('workbox-webpack-plugin');
+
 
 function resolve(dir) {
   return path.join(__dirname, '..', dir);
@@ -18,6 +20,13 @@ module.exports = {
       ? config.build.assetsPublicPath
       : config.dev.assetsPublicPath,
   },
+  plugins: [
+    new WorkboxPlugin({
+      globDirectory: config.build.assetsRoot,
+      globPatterns: ['**/*.{html,js,css}'],
+      swDest: path.join(config.build.assetsRoot, 'js/sw.js'),
+    }),
+  ],
   resolve: {
     extensions: ['.js', '.vue', '.json'],
     alias: {

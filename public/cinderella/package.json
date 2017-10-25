@@ -6,7 +6,8 @@
   "private": true,
   "scripts": {
     "dev": "node build/dev-server.js",
-    "start": "webpack-dashboard -- node build/dev-server.js",
+    "start": "node build/dev-server.js",
+    "startd": "webpack-dashboard -- node build/dev-server.js",
     "build": "node build/build.js",
     "lint": "eslint --ext .js,.vue src"
   },
@@ -17,7 +18,7 @@
     "vue-router": "^2.6.0",
     "vuetify": "^0.14.11",
     "vuex": "^2.3.1",
-    "webpack-dashboard": "^1.0.0-5"
+    "webpack-dashboard": "^1.0.0"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
@@ -66,7 +67,8 @@
     "webpack-bundle-analyzer": "^2.2.1",
     "webpack-dev-middleware": "^1.10.0",
     "webpack-hot-middleware": "^2.18.0",
-    "webpack-merge": "^4.1.0"
+    "webpack-merge": "^4.1.0",
+    "workbox-webpack-plugin": "^2.1.0"
   },
   "engines": {
     "node": ">= 4.0.0",
