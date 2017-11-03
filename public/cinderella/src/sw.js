@@ -3,4 +3,4 @@ importScripts('https://cdn.jsdelivr.net/npm/workbox-sw@2.1.0/build/importScripts
 const workboxSW = new WorkboxSW();
 workboxSW.precache([]);
 
-workboxSW.router.registerRoute('/', workboxSW.strategies.cacheFirst());
+workboxSW.router.registerRoute('/', workboxSW.strategies.networkFirst());

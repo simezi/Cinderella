@@ -5,7 +5,7 @@
         router-link(to="/idols") アイドル一覧
       v-breadcrumbs-item {{idolName}}
 
-    v-card-title(primary-title)
+    v-card-title(primary-title)#amazon
       div
         h1.headline(:class="typeColor(idol.type)") {{idolName}}
     v-layout
@@ -69,6 +69,7 @@
 <script>
   import { mapState } from 'vuex';
   import { getIdolSongs } from '@/api/idol/index';
+  import createAmazonAd from '@/components/common/affiliate/amazon';
 
   export default {
     data() {
@@ -105,7 +106,13 @@
     created() {
       this.$store.dispatch('fetchIdols');
 // eslint-disable-next-line no-return-assign
-      getIdolSongs(this.idolName).then(idolSongs => this.idolSongs = idolSongs);
+      getIdolSongs(this.idolName).then((idolSongs) => {
+        this.idolSongs = idolSongs;
+      });
+    },
+
+    mounted() {
+      createAmazonAd(this.idolName);
     },
   };
 </script>
