@@ -25,7 +25,7 @@ module.exports = {
       globDirectory: config.build.assetsRoot,
       globPatterns: ['**/*.{html,js,css}'],
       swSrc: './src/sw.js',
-      swDest: path.join(config.build.assetsRoot, 'js/sw.js'),
+      swDest: path.join(config.build.assetsRoot, 'sw.js'),
     }),
   ],
   resolve: {
