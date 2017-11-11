@@ -5,7 +5,7 @@
         router-link(to="/idols") アイドル一覧
       v-breadcrumbs-item {{idolName}}
 
-    v-card-title(primary-title)#amazon
+    v-card-title(primary-title)
       div
         h1.headline(:class="typeColor(idol.type)") {{idolName}}
     v-layout

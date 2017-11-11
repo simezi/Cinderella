@@ -56,4 +56,8 @@
   .nowrap {
     white-space: nowrap;
   }
+
+  .application, .application>main>.container {
+    min-height: 50vh !important;
+  }
 </style>

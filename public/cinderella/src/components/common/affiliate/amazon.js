@@ -1,5 +1,5 @@
 function createAmazonAd(keyword) {
-  const app = document.getElementById('app');
+  const app = document.body;
   const oldvar = document.getElementById('varscript');
   const oldad = document.getElementById('adscript');
   const oldbanners = document.querySelectorAll('[id^=amzn]');
@@ -23,12 +23,12 @@ function createAmazonAd(keyword) {
   varscript.setAttribute('charset', 'utf-8');
   varscript.setAttribute('type', 'text/javascript');
   varscript.setAttribute('id', 'varscript');
-  document.body.insertBefore(varscript, app);
+  app.parentNode.insertBefore(varscript, app);
 
   const adscript = document.createElement('script');
   adscript.setAttribute('src', '//z-fe.amazon-adsystem.com/widgets/q?ServiceVersion=20070822&Operation=GetScript&ID=OneJS&WS=1&Marketplace=JP');
   adscript.setAttribute('id', 'adscript');
-  document.body.insertBefore(adscript, varscript.nextElementSibling);
+  app.parentNode.insertBefore(adscript, varscript.nextElementSibling);
 }
 
 export default createAmazonAd;
